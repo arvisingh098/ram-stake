@@ -1,0 +1,43 @@
+{
+  "files": {
+    "static/js/0.5cf8b5a6.chunk.js": "/ram-stake/static/js/0.5cf8b5a6.chunk.js",
+    "static/js/0.5cf8b5a6.chunk.js.map": "/ram-stake/static/js/0.5cf8b5a6.chunk.js.map",
+    "main.js": "/ram-stake/static/js/main.17989a33.chunk.js",
+    "main.js.map": "/ram-stake/static/js/main.17989a33.chunk.js.map",
+    "runtime-main.js": "/ram-stake/static/js/runtime-main.52888b0b.js",
+    "runtime-main.js.map": "/ram-stake/static/js/runtime-main.52888b0b.js.map",
+    "static/css/3.214ed77a.chunk.css": "/ram-stake/static/css/3.214ed77a.chunk.css",
+    "static/js/3.3fc67656.chunk.js": "/ram-stake/static/js/3.3fc67656.chunk.js",
+    "static/js/3.3fc67656.chunk.js.map": "/ram-stake/static/js/3.3fc67656.chunk.js.map",
+    "static/js/4.eec07344.chunk.js": "/ram-stake/static/js/4.eec07344.chunk.js",
+    "static/js/4.eec07344.chunk.js.map": "/ram-stake/static/js/4.eec07344.chunk.js.map",
+    "static/js/5.210302d1.chunk.js": "/ram-stake/static/js/5.210302d1.chunk.js",
+    "static/js/5.210302d1.chunk.js.map": "/ram-stake/static/js/5.210302d1.chunk.js.map",
+    "static/js/6.d7888b50.chunk.js": "/ram-stake/static/js/6.d7888b50.chunk.js",
+    "static/js/6.d7888b50.chunk.js.map": "/ram-stake/static/js/6.d7888b50.chunk.js.map",
+    "static/js/7.df338d6b.chunk.js": "/ram-stake/static/js/7.df338d6b.chunk.js",
+    "static/js/7.df338d6b.chunk.js.map": "/ram-stake/static/js/7.df338d6b.chunk.js.map",
+    "static/js/8.d93f3dd8.chunk.js": "/ram-stake/static/js/8.d93f3dd8.chunk.js",
+    "static/js/8.d93f3dd8.chunk.js.map": "/ram-stake/static/js/8.d93f3dd8.chunk.js.map",
+    "static/js/9.ee1dc46d.chunk.js": "/ram-stake/static/js/9.ee1dc46d.chunk.js",
+    "static/js/9.ee1dc46d.chunk.js.map": "/ram-stake/static/js/9.ee1dc46d.chunk.js.map",
+    "static/js/10.38e4d107.chunk.js": "/ram-stake/static/js/10.38e4d107.chunk.js",
+    "static/js/10.38e4d107.chunk.js.map": "/ram-stake/static/js/10.38e4d107.chunk.js.map",
+    "index.html": "/ram-stake/index.html",
+    "precache-manifest.432e2bde41625a1e61c09546999117e2.js": "/ram-stake/precache-manifest.432e2bde41625a1e61c09546999117e2.js",
+    "service-worker.js": "/ram-stake/service-worker.js",
+    "static/css/3.214ed77a.chunk.css.map": "/ram-stake/static/css/3.214ed77a.chunk.css.map",
+    "static/js/3.3fc67656.chunk.js.LICENSE.txt": "/ram-stake/static/js/3.3fc67656.chunk.js.LICENSE.txt",
+    "static/js/4.eec07344.chunk.js.LICENSE.txt": "/ram-stake/static/js/4.eec07344.chunk.js.LICENSE.txt",
+    "static/js/5.210302d1.chunk.js.LICENSE.txt": "/ram-stake/static/js/5.210302d1.chunk.js.LICENSE.txt",
+    "static/js/6.d7888b50.chunk.js.LICENSE.txt": "/ram-stake/static/js/6.d7888b50.chunk.js.LICENSE.txt",
+    "static/js/9.ee1dc46d.chunk.js.LICENSE.txt": "/ram-stake/static/js/9.ee1dc46d.chunk.js.LICENSE.txt",
+    "static/media/react-widgets.css": "/ram-stake/static/media/rw-widgets.eceddf47.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.52888b0b.js",
+    "static/css/3.214ed77a.chunk.css",
+    "static/js/3.3fc67656.chunk.js",
+    "static/js/main.17989a33.chunk.js"
+  ]
+}
