@@ -56,7 +56,7 @@ function WithdrawDeposit({
                   label="Deposit"
                   onClick={() => {
                     deposit(
-                      TokenGeyser.addr,
+                      RAM.addr,
                       toBaseUnitBN(depositAmount, RAM.decimals),
                     );
                   }}

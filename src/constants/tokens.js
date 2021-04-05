@@ -1,25 +1,13 @@
 export const UNI = {
-  addr: '0x5f629df06573607097d3ebf7bb276f11c20b00de',
+  addr: '0x395C342402BD57Ac8Aa78b9125d2cA71475d139E',
   decimals: 18,
   symbol: 'UNI',
 };
 
 export const USDC = {
-  addr: '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-  decimals: 6,
-  symbol: 'USDC',
-};
-
-export const ESD = {
-  addr: '0x36F3FD68E7325a35EB768F1AedaAe9EA0689d723',
+  addr: '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',
   decimals: 18,
-  symbol: 'ESD',
-};
-
-export const ESDS = {
-  addr: '0x443D2f2755DB5942601fa062Cc248aAA153313D3',
-  decimals: 18,
-  symbol: 'ESDS',
+  symbol: 'WETH',
 };
 
 export const TokenGeyser = {
@@ -27,7 +15,7 @@ export const TokenGeyser = {
 };
 
 export const RAM = {
-  addr: '0xcAcc27EE067794cddA679464b185fE8FB8391c9a',
-  decimals: 18,
+  addr: '0xac6fE9aA6b996D15f23E2E9a384fE64607bba7d5',
+  decimals: 9,
   symbol: 'RAM',
 };

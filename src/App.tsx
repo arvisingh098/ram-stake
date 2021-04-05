@@ -66,12 +66,11 @@ function App() {
           {
             hasWeb3 ?
               <Switch>
-                <Route path="/dao/:override"><Wallet user={user}/></Route>
-                <Route path="/dao/"><Wallet user={user}/></Route>
+                <Route path="/stake/:override"><Wallet user={user}/></Route>
+                <Route path="/stake/"><Wallet user={user}/></Route>
                 <Route path="/trade/"><Trade user={user}/></Route>
-                <Route path="/regulation/"><Regulation user={user}/></Route>
-                <Route path="/pool/:override"><Withdraw user={user}/></Route>
-                <Route path="/pool/"><Withdraw user={user}/></Route>
+                <Route path="/unstake/:override"><Withdraw user={user}/></Route>
+                <Route path="/unstake/"><Withdraw user={user}/></Route>
                 <Route path="/"><HomePage user={user}/></Route>
               </Switch>
               :

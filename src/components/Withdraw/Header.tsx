@@ -15,7 +15,7 @@ const PoolPageHeader = ({
 }: PoolPageHeaderProps) => (
   <div style={{ padding: '2%', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
     <div style={{ flexBasis: '25%' }}>
-      <TextBlock label="APY" text="185%"/>
+      <TextBlock label="APY" text="Comming Soon"/>
     </div>
     <div style={{ flexBasis: '25%' }}>
       <BalanceBlock asset="Wallet Balance" balance={userLpToken} suffix={" RAM-WETH"}/>

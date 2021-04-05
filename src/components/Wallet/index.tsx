@@ -45,7 +45,7 @@ function Wallet({ user }: {user: string}) {
         totalStakedFor(TokenGeyser.addr, user),
         getBalance(RAM.addr, user),
         unstakeQuery(TokenGeyser.addr, user),
-        getTokenAllowance(RAM.addr, user, TokenGeyser.addr),
+        getTokenAllowance(UNI.addr, user, TokenGeyser.addr),
       ]);
 
       const userLpToken = toTokenUnitsBN(lpTokens, RAM.decimals);

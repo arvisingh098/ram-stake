@@ -5,6 +5,7 @@ import BigNumber from 'bignumber.js';
 import { notify } from './txNotifier.ts';
 const pairAbi = require('../constants/abi/UniswapV2Pair.json');
 const tokenGeyserAbi = require('../constants/abi/TokenGeyser.json');
+const ramAbi = require('../constants/abi/RamToken.json');
 
 const UINT256_MAX = '0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff';
 
@@ -62,9 +63,9 @@ export const approve = async (tokenAddr, spender, amt = UINT256_MAX) => {
 
 export const deposit = async (dao, amount) => {
   const account = await checkConnectedAndGetAddress();
-  const daoContract = new window.web3.eth.Contract(tokenGeyserAbi, dao);
+  const daoContract = new window.web3.eth.Contract(ramAbi, dao);
   await daoContract.methods
-    .stake(new BigNumber(amount).toFixed(), [])
+    .transfer(account, new BigNumber(amount).toFixed())
     .send({
       from: account,
     })

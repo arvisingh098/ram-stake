@@ -6,7 +6,7 @@ import {
 import EpochBlock from "../common/EpochBlock";
 
 function epochformatted() {
-  const epochStart = 1599148800;
+  const epochStart = 1616866639;
   const epochPeriod = 8 * 60 * 60;
   const hour = 60 * 60;
   const minute = 60;
@@ -66,7 +66,7 @@ function HomePage({user}: HomePageProps) {
             description="Earn rewards for staking"
             icon={<i className = "fas fa-parachute-box"/>}
             onClick={() => {
-              history.push('/dao/');
+              history.push('/stake/');
             }}
           />
         </div>
@@ -77,25 +77,12 @@ function HomePage({user}: HomePageProps) {
             description="Unstake and Claim LP Tokens."
             icon={<i className = "fas fa-dot-circle"/>}
             onClick={() => {
-              history.push('/pool/');
+              history.push('/unstake/');
             }}
           />
         </div>
 
         <div style={{ flexBasis: '30%', marginLeft: '3%', marginRight: '2%' }}>
-          <MainButton
-            title="Stats"
-            description="RAM Info."
-            icon={<i className = "fa fa-file"/>}
-            onClick={() => {
-              history.push('/regulation/');
-            }}
-          />
-        </div>
-        </div>
-
-        <div style={{ padding: '1%', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
-        <div style={{ flexBasis: '30%', marginLeft: '35%', marginRight: '2%'}}>
           <MainButton
             title="Trade"
             description="Trade RAM tokens."
@@ -105,7 +92,7 @@ function HomePage({user}: HomePageProps) {
             }}
           />
         </div>
-      </div>
+        </div>
     </>
   );
 }

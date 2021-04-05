@@ -34,7 +34,7 @@ function Footer({updateTheme, theme, hasWeb3}: FooterProps) {
               <FooterLink icon={<i className="fab fa-discord"/>} href={""}/>
             </div>
             <div style={{ width: '45%', textAlign: 'right', height: '18px', marginTop: '15px', marginBottom: '15px'}}>
-              made with <span role="img" aria-labelledby="heartbreak">💔️</span> by the &#123;ess&#125;.
+              made with <span role="img" aria-labelledby="heartbreak">💔️</span> by the &#123;ramifi&#125;.
             </div>
             <div style={{ width: '5%', textAlign: 'right', marginTop: '4px' }}>
               <ChangeModeButton hasWeb3={hasWeb3} theme={theme} updateTheme={updateTheme} />

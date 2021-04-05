@@ -6,7 +6,7 @@ import { getTokenBalance } from '../../utils/infura';
 import { toTokenUnitsBN } from '../../utils/number';
 
 import TradePageHeader from './Header';
-import {RAM, UNI} from "../../constants/tokens";
+import {RAM, UNI, USDC} from "../../constants/tokens";
 import IconHeader from "../common/IconHeader";
 
 
@@ -22,12 +22,12 @@ function UniswapPool({ user }: {user: string}) {
         pairBalanceRAMStr, pairBalanceUSDCStr,
       ] = await Promise.all([
         getTokenBalance(RAM.addr, UNI.addr),
-        getTokenBalance("0xd0a1e359811322d97991e03f863a0c30c2cf029c", UNI.addr),
+        getTokenBalance("0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2", UNI.addr),
       ]);
 
       if (!isCancelled) {
         setPairBalanceRAM(toTokenUnitsBN(pairBalanceRAMStr, RAM.decimals));
-        setPairBalanceUSDC(toTokenUnitsBN(pairBalanceUSDCStr, RAM.decimals));
+        setPairBalanceUSDC(toTokenUnitsBN(pairBalanceUSDCStr, USDC.decimals));
       }
     }
 
@@ -57,7 +57,7 @@ function UniswapPool({ user }: {user: string}) {
             title="Info"
             description="View RAM-WETH pool stats."
             icon={<i className="fas fa-chart-area"/>}
-            href={"https://uniswap.info/pair/0x5f629df06573607097d3ebf7bb276f11c20b00de"}
+            href={"https://uniswap.info/pair/0x395C342402BD57Ac8Aa78b9125d2cA71475d139E"}
           />
         </div>
 
@@ -66,7 +66,7 @@ function UniswapPool({ user }: {user: string}) {
             title="Trade"
             description="Trade RAM tokens."
             icon={<i className="fas fa-exchange-alt"/>}
-            href={"https://uniswap.exchange/swap?inputCurrency=0xcAcc27EE067794cddA679464b185fE8FB8391c9a&outputCurrency=0xd0a1e359811322d97991e03f863a0c30c2cf029c"}
+            href={"https://uniswap.exchange/swap?inputCurrency=0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2&outputCurrency=0xac6fE9aA6b996D15f23E2E9a384fE64607bba7d5"}
           />
         </div>
 
@@ -75,7 +75,7 @@ function UniswapPool({ user }: {user: string}) {
             title="Supply"
             description="Supply and redeem liquidity."
             icon={<i className="fas fa-water"/>}
-            href={"https://uniswap.exchange/add/0xcAcc27EE067794cddA679464b185fE8FB8391c9a/0xd0a1e359811322d97991e03f863a0c30c2cf029c"}
+            href={"https://uniswap.exchange/add/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2/0xac6fE9aA6b996D15f23E2E9a384fE64607bba7d5 "}
           />
         </div>
       </div>

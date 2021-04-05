@@ -11,7 +11,6 @@ import {
 } from "@aragon/ui";
 
 import { connect, connectedNetworkType } from "../../utils/web3";
-import TotalBalance from "./TotalBalance";
 
 type connectButtonProps = {
   hasWeb3: boolean;
@@ -68,11 +67,6 @@ function ConnectButton({ hasWeb3, user, setUser }: connectButtonProps) {
             </div>
             <div style={{ flex: "1", textAlign: "right" }}>
               <IdentityBadge entity={user} />
-            </div>
-          </div>
-          <div style={{ display: "flex" }}>
-            <div style={{ flex: "1", textAlign: "right" }}>
-              <TotalBalance user={user} />
             </div>
           </div>
         </Box>
