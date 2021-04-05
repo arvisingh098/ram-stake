@@ -11,7 +11,7 @@ export const USDC = {
 };
 
 export const TokenGeyser = {
-  addr: '0x11EcFAE11Da93eE9c692b14324676b1842025CC3',
+  addr: '',
 };
 
 export const RAM = {
