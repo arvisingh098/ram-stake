@@ -63,9 +63,9 @@ export const approve = async (tokenAddr, spender, amt = UINT256_MAX) => {
 
 export const deposit = async (dao, amount) => {
   const account = await checkConnectedAndGetAddress();
-  const daoContract = new window.web3.eth.Contract(ramAbi, dao);
+  const daoContract = new window.web3.eth.Contract(tokenGeyserAbi, dao);
   await daoContract.methods
-    .transfer(account, new BigNumber(amount).toFixed())
+    .stake(new BigNumber(amount).toFixed(), [])
     .send({
       from: account,
     })
