@@ -49,7 +49,7 @@ function Pool({ user }: {user: string}) {
       ]);
 
       const userLpToken = toTokenUnitsBN(lpTokens, UNI.decimals);
-      const userStakedLpToken = toTokenUnitsBN(stakedAmount, RAM.decimals);
+      const userStakedLpToken = toTokenUnitsBN(stakedAmount, UNI.decimals);
       const userRamToken = toTokenUnitsBN(ramToken, RAM.decimals);
       const userEarnedToken = toTokenUnitsBN(earnedAmount, RAM.decimals);
 
