@@ -2,44 +2,39 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
-require('./slicedToArray-0711941d.js');
-require('./unsupportedIterableToArray-68db1d3b.js');
+require('./slicedToArray-a8a77f0e.js');
+require('./unsupportedIterableToArray-f175acfa.js');
 var React = require('react');
-var React__default = _interopDefault(React);
-require('./_commonjsHelpers-72d386ba.js');
-require('./index-b0606964.js');
-require('./defineProperty-0921a47c.js');
-require('styled-components');
+require('./_commonjsHelpers-1b94f6bc.js');
+require('./index-46d0e707.js');
 require('./miscellaneous.js');
 require('./environment.js');
-require('./font.js');
 require('./constants.js');
-require('./breakpoints.js');
-require('./springs.js');
-require('./text-styles.js');
-var _extends = require('./extends-40571110.js');
-var objectWithoutProperties = require('./objectWithoutProperties-35db8ab0.js');
-require('./index-ecc57c9f.js');
-var IconPropTypes = require('./IconPropTypes-56de5759.js');
+var _extends = require('./extends-023d783e.js');
+var objectWithoutProperties = require('./objectWithoutProperties-c6d3675c.js');
+require('./index-4def0554.js');
+var IconPropTypes = require('./IconPropTypes-12cd7567.js');
+
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 
 function IconRefresh(_ref) {
   var size = _ref.size,
-      props = objectWithoutProperties._objectWithoutProperties(_ref, ["size"]);
+      props = objectWithoutProperties.objectWithoutProperties(_ref, ["size"]);
 
   var sizeValue = IconPropTypes.useIconSize(size);
-  return /*#__PURE__*/React__default.createElement("svg", _extends._extends({
+  return /*#__PURE__*/React__default['default'].createElement("svg", _extends._extends_1({
     width: sizeValue,
     height: sizeValue,
     fill: "none",
     viewBox: "0 0 24 24"
-  }, props), /*#__PURE__*/React__default.createElement("path", {
+  }, props), /*#__PURE__*/React__default['default'].createElement("path", {
     fill: "currentColor",
     stroke: "currentColor",
     strokeWidth: 0.2,
     d: "M8.99 10.216H5.96v-3.03a.582.582 0 00-1.164 0v3.612c0 .321.26.582.582.582H8.99a.582.582 0 000-1.164zm9.632 2.407H15.01a.582.582 0 000 1.165h3.03v3.03a.582.582 0 101.164 0v-3.613a.582.582 0 00-.582-.582z"
-  }), /*#__PURE__*/React__default.createElement("path", {
+  }), /*#__PURE__*/React__default['default'].createElement("path", {
     fill: "currentColor",
     stroke: "currentColor",
     strokeWidth: 0.2,

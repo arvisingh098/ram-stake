@@ -2,18 +2,19 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
 var React = require('react');
-var React__default = _interopDefault(React);
-require('./_commonjsHelpers-72d386ba.js');
-var index = require('./index-b0606964.js');
+require('./_commonjsHelpers-1b94f6bc.js');
+var index = require('./index-46d0e707.js');
 var _styled = require('styled-components');
-var _styled__default = _interopDefault(_styled);
-var _extends$1 = require('./extends-40571110.js');
-var objectWithoutProperties = require('./objectWithoutProperties-35db8ab0.js');
+var _extends = require('./extends-023d783e.js');
+var objectWithoutProperties = require('./objectWithoutProperties-c6d3675c.js');
 
-var _StyledDiv = _styled__default("div").withConfig({
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
+var _styled__default = /*#__PURE__*/_interopDefaultLegacy(_styled);
+
+var _StyledDiv = _styled__default['default']("div").withConfig({
   displayName: "ScrollView___StyledDiv",
   componentId: "sc-1hhoqwn-0"
 })(["position:relative;z-index:0;height:100%;overflow-x:", ";overflow-y:", ";"], function (p) {
@@ -26,18 +27,18 @@ function ScrollView(_ref) {
   var children = _ref.children,
       horizontal = _ref.horizontal,
       vertical = _ref.vertical,
-      props = objectWithoutProperties._objectWithoutProperties(_ref, ["children", "horizontal", "vertical"]);
+      props = objectWithoutProperties.objectWithoutProperties(_ref, ["children", "horizontal", "vertical"]);
 
-  return /*#__PURE__*/React__default.createElement(_StyledDiv, _extends$1._extends({}, props, {
+  return /*#__PURE__*/React__default['default'].createElement(_StyledDiv, _extends._extends_1({}, props, {
     _css: horizontal ? 'auto' : 'hidden',
     _css2: vertical ? 'auto' : 'hidden'
   }), children);
 }
 
 ScrollView.propTypes = {
-  vertical: index.PropTypes.bool,
-  horizontal: index.PropTypes.bool,
-  children: index.PropTypes.node
+  vertical: index.propTypes.bool,
+  horizontal: index.propTypes.bool,
+  children: index.propTypes.node
 };
 ScrollView.defaultProps = {
   vertical: true,

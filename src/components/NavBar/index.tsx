@@ -12,6 +12,7 @@ type NavbarProps = {
 
 function NavBar({ hasWeb3, user, setUser }: NavbarProps) {
   const currentTheme = useTheme();
+  
   const logoUrl = `./logo/logo_${currentTheme._name === 'light' ? 'black' : 'white'}.svg`;
 
   return (

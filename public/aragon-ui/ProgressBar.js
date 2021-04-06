@@ -2,44 +2,29 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
-require('./slicedToArray-0711941d.js');
-require('./unsupportedIterableToArray-68db1d3b.js');
+require('./slicedToArray-a8a77f0e.js');
+require('./unsupportedIterableToArray-f175acfa.js');
 var React = require('react');
-var React__default = _interopDefault(React);
-require('./_commonjsHelpers-72d386ba.js');
-require('./index-b0606964.js');
-var defineProperty$1 = require('./defineProperty-0921a47c.js');
-require('./toConsumableArray-d8a4a2c3.js');
+require('./_commonjsHelpers-1b94f6bc.js');
+require('./index-46d0e707.js');
+var defineProperty = require('./defineProperty-3cad0327.js');
+require('./toConsumableArray-cc0d28a9.js');
 var _styled = require('styled-components');
-var _styled__default = _interopDefault(_styled);
-require('./getPrototypeOf-2a661a20.js');
+require('./getPrototypeOf-55c9e80c.js');
 require('./color.js');
-require('./components.js');
-require('./contains-component.js');
-require('./css.js');
-require('./dayjs.min-e07657bf.js');
-require('./date.js');
 require('./miscellaneous.js');
 var environment = require('./environment.js');
-require('./font.js');
-require('./math-f4029164.js');
-require('./characters.js');
-require('./format.js');
-require('./keycodes.js');
-require('./url.js');
-require('./web3.js');
-require('./constants.js');
-require('./breakpoints.js');
 var springs = require('./springs.js');
-require('./text-styles.js');
 require('./theme-dark.js');
 require('./theme-light.js');
 var Theme = require('./Theme.js');
 var objectWithoutPropertiesLoose = require('./objectWithoutPropertiesLoose-1af20ad0.js');
-require('react-dom');
-var proptypes = require('./proptypes-5b34673d.js');
+var proptypes = require('./proptypes-9c58a90f.js');
+
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
+var _styled__default = /*#__PURE__*/_interopDefaultLegacy(_styled);
 
 function _defineProperties(target, props) {
   for (var i = 0; i < props.length; i++) {
@@ -1199,7 +1184,7 @@ function createAnimatedComponent(Component) {
           scrollLeft = _this$propsAnimated$g.scrollLeft,
           animatedProps = objectWithoutPropertiesLoose._objectWithoutPropertiesLoose(_this$propsAnimated$g, ["scrollTop", "scrollLeft"]);
 
-      return React__default.createElement(Component, objectWithoutPropertiesLoose._extends({}, animatedProps, {
+      return React__default['default'].createElement(Component, objectWithoutPropertiesLoose._extends({}, animatedProps, {
         ref: function ref(node) {
           return _this2.node = handleRef(node, _this2.props.forwardRef);
         }
@@ -1207,10 +1192,10 @@ function createAnimatedComponent(Component) {
     };
 
     return AnimatedComponent;
-  }(React__default.Component);
+  }(React__default['default'].Component);
 
-  return React__default.forwardRef(function (props, ref) {
-    return React__default.createElement(AnimatedComponent, objectWithoutPropertiesLoose._extends({}, props, {
+  return React__default['default'].forwardRef(function (props, ref) {
+    return React__default['default'].createElement(AnimatedComponent, objectWithoutPropertiesLoose._extends({}, props, {
       forwardRef: ref
     }));
   });
@@ -1885,21 +1870,21 @@ var extendedAnimated = domElements.reduce(function (acc, element) {
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { defineProperty$1._defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { defineProperty.defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 var RADIUS = 2;
 var BAR_HEIGHT = 6;
 var INDETERMINATE_WIDTH = 1 / 4;
 var INDETERMINATE_DURATION = 1600;
 var indeterminateAnim = _styled.keyframes(["0%{transform:translate3d(calc(-100% - 1px),0,0);}70%,100%{transform:translate3d(calc(", "% + 1px),0,0);}"], 100 / INDETERMINATE_WIDTH);
 
-var _StyledDiv = _styled__default("div").withConfig({
+var _StyledDiv = _styled__default['default']("div").withConfig({
   displayName: "ProgressBar___StyledDiv",
   componentId: "sc-1gly9sn-0"
 })(["width:100%;height:", "px;background:", ";border-radius:", "px;overflow:hidden;"], BAR_HEIGHT, function (p) {
   return p._css;
 }, RADIUS);
 
-var ProgressBar = React__default.memo(function (_ref) {
+var ProgressBar = /*#__PURE__*/React__default['default'].memo(function (_ref) {
   var animate = _ref.animate,
       color = _ref.color,
       progress = _ref.progress,
@@ -1918,7 +1903,7 @@ var ProgressBar = React__default.memo(function (_ref) {
   var theme = Theme.useTheme();
   var currentColor = color === undefined ? theme.accent : color;
   var transition = useSpring({
-    config: _objectSpread({}, springs.springs.smooth, {
+    config: _objectSpread(_objectSpread({}, springs.springs.smooth), {}, {
       precision: 0.001
     }),
     from: {
@@ -1931,9 +1916,9 @@ var ProgressBar = React__default.memo(function (_ref) {
     },
     immediate: !animate
   });
-  return /*#__PURE__*/React__default.createElement(_StyledDiv, {
+  return /*#__PURE__*/React__default['default'].createElement(_StyledDiv, {
     _css: theme.surfaceUnder
-  }, /*#__PURE__*/React__default.createElement(Bar, {
+  }, /*#__PURE__*/React__default['default'].createElement(Bar, {
     style: {
       width: "".concat((indeterminate ? INDETERMINATE_WIDTH : 1) * 100, "%"),
       background: currentColor,
@@ -1945,7 +1930,7 @@ var ProgressBar = React__default.memo(function (_ref) {
     }
   }));
 });
-var Bar = _styled__default(extendedAnimated.div).withConfig({
+var Bar = _styled__default['default'](extendedAnimated.div).withConfig({
   displayName: "ProgressBar__Bar",
   componentId: "sc-1gly9sn-1"
 })(["width:100%;height:", "px;transform-origin:0 0;animation:", " ", "ms ease-in-out infinite;animation-name:none;"], BAR_HEIGHT, indeterminateAnim, INDETERMINATE_DURATION);
@@ -1954,10 +1939,10 @@ ProgressBar.defaultProps = {
   value: -1
 };
 ProgressBar.propTypes = {
-  animate: proptypes.PropTypes.bool,
-  color: proptypes.PropTypes.string,
-  progress: proptypes.PropTypes._0to1,
-  value: proptypes.PropTypes.oneOfType([proptypes.PropTypes._0to1, proptypes.PropTypes.oneOf([-1])])
+  animate: proptypes.ExtendedPropTypes.bool,
+  color: proptypes.ExtendedPropTypes.string,
+  progress: proptypes.ExtendedPropTypes._0to1,
+  value: proptypes.ExtendedPropTypes.oneOfType([proptypes.ExtendedPropTypes._0to1, proptypes.ExtendedPropTypes.oneOf([-1])])
 };
 
 exports.default = ProgressBar;

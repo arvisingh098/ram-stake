@@ -2,40 +2,29 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
-var slicedToArray = require('./slicedToArray-0711941d.js');
-require('./unsupportedIterableToArray-68db1d3b.js');
+var slicedToArray = require('./slicedToArray-a8a77f0e.js');
+require('./unsupportedIterableToArray-f175acfa.js');
 var React = require('react');
-var React__default = _interopDefault(React);
-require('./_commonjsHelpers-72d386ba.js');
-var index = require('./index-b0606964.js');
-require('./defineProperty-0921a47c.js');
-require('./toConsumableArray-d8a4a2c3.js');
+require('./_commonjsHelpers-1b94f6bc.js');
+var index$1 = require('./index-46d0e707.js');
+require('./defineProperty-3cad0327.js');
+require('./toConsumableArray-cc0d28a9.js');
 var _styled = require('styled-components');
-var _styled__default = _interopDefault(_styled);
-require('./getPrototypeOf-2a661a20.js');
+require('./getPrototypeOf-55c9e80c.js');
 require('./color.js');
-require('./components.js');
-require('./contains-component.js');
-require('./css.js');
-require('./dayjs.min-e07657bf.js');
-require('./date.js');
 require('./miscellaneous.js');
 require('./environment.js');
-require('./font.js');
-require('./math-f4029164.js');
-require('./characters.js');
-require('./format.js');
-require('./keycodes.js');
-require('./url.js');
-require('./web3.js');
 require('./theme-dark.js');
 require('./theme-light.js');
 var Theme = require('./Theme.js');
-var _extends = require('./extends-40571110.js');
-var objectWithoutProperties = require('./objectWithoutProperties-35db8ab0.js');
-var index$1 = require('./index-ecc57c9f.js');
+var _extends = require('./extends-023d783e.js');
+var objectWithoutProperties = require('./objectWithoutProperties-c6d3675c.js');
+var index = require('./index-4def0554.js');
+
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
+var _styled__default = /*#__PURE__*/_interopDefaultLegacy(_styled);
 
 var spin = _styled.keyframes(["from{transform:rotate(0deg);}to{transform:rotate(360deg);}"]);
 var SIZE_SMALL = 14;
@@ -46,7 +35,7 @@ var BORDER_WIDTH_STRONG = 2.5;
 var BORDER_WIDTH_MEDIUM = 1;
 var lastInstanceId = 1;
 
-var _StyledSpan = _styled__default("span").withConfig({
+var _StyledSpan = _styled__default['default']("span").withConfig({
   displayName: "LoadingRing___StyledSpan",
   componentId: "iauf6f-0"
 })(["position:relative;display:flex;align-items:center;justify-content:center;width:", "px;height:", "px;"], function (p) {
@@ -55,28 +44,28 @@ var _StyledSpan = _styled__default("span").withConfig({
   return p._css2;
 });
 
-var _StyledCircle = _styled__default("circle").withConfig({
+var _StyledCircle = _styled__default['default']("circle").withConfig({
   displayName: "LoadingRing___StyledCircle",
   componentId: "iauf6f-1"
 })(["animation-duration:1s;animation-iteration-count:infinite;animation-timing-function:linear;animation-name:", ";transform-origin:50% 50%;"], function (p) {
   return p._css3;
 });
 
-var LoadingRing = React__default.memo(function LoadingRing(_ref) {
+var LoadingRing = /*#__PURE__*/React__default['default'].memo(function LoadingRing(_ref) {
   var paused = _ref.paused,
       modeProp = _ref.mode,
-      props = objectWithoutProperties._objectWithoutProperties(_ref, ["paused", "mode"]);
+      props = objectWithoutProperties.objectWithoutProperties(_ref, ["paused", "mode"]);
 
   var theme = Theme.useTheme();
 
   var _useState = React.useState(function () {
     return "sync-indicator-".concat(lastInstanceId++);
   }),
-      _useState2 = slicedToArray._slicedToArray(_useState, 1),
+      _useState2 = slicedToArray.slicedToArray(_useState, 1),
       instanceId = _useState2[0];
 
-  var _useInside = index$1.o('FloatIndicator'),
-      _useInside2 = slicedToArray._slicedToArray(_useInside, 1),
+  var _useInside = index.o('FloatIndicator'),
+      _useInside2 = slicedToArray.slicedToArray(_useInside, 1),
       insideFloatIndicator = _useInside2[0];
 
   var mode = modeProp || (insideFloatIndicator ? 'half-circle' : 'two-parts');
@@ -98,36 +87,36 @@ var LoadingRing = React__default.memo(function LoadingRing(_ref) {
 
     return [length / 2, length / 2];
   }, [mode, size, paused]),
-      _useMemo2 = slicedToArray._slicedToArray(_useMemo, 2),
+      _useMemo2 = slicedToArray.slicedToArray(_useMemo, 2),
       gapLength = _useMemo2[0],
       dashLength = _useMemo2[1];
 
-  return /*#__PURE__*/React__default.createElement(_StyledSpan, _extends._extends({}, props, {
+  return /*#__PURE__*/React__default['default'].createElement(_StyledSpan, _extends._extends_1({}, props, {
     _css: containerSize,
     _css2: containerSize
-  }), /*#__PURE__*/React__default.createElement("svg", {
+  }), /*#__PURE__*/React__default['default'].createElement("svg", {
     width: size + borderWidth,
     height: size + borderWidth,
     viewBox: "0 0 ".concat(size + borderWidth, " ").concat(size + borderWidth)
-  }, /*#__PURE__*/React__default.createElement("linearGradient", {
+  }, /*#__PURE__*/React__default['default'].createElement("linearGradient", {
     id: "".concat(instanceId, "-gradient"),
     gradientTransform: "rotate(90)"
-  }, /*#__PURE__*/React__default.createElement("stop", {
+  }, /*#__PURE__*/React__default['default'].createElement("stop", {
     offset: "0%",
     stopColor: theme.accentEnd
-  }), /*#__PURE__*/React__default.createElement("stop", {
+  }), /*#__PURE__*/React__default['default'].createElement("stop", {
     offset: "100%",
     stopColor: theme.accentStart
-  })), insideFloatIndicator && /*#__PURE__*/React__default.createElement("circle", {
+  })), insideFloatIndicator && /*#__PURE__*/React__default['default'].createElement("circle", {
     cx: "50%",
     cy: "50%",
     r: size / 2,
     fill: "transparent",
     stroke: theme.floatingContent.alpha(0.3),
     strokeWidth: borderWidth
-  }), /*#__PURE__*/React__default.createElement("mask", {
+  }), /*#__PURE__*/React__default['default'].createElement("mask", {
     id: "".concat(instanceId, "-mask")
-  }, /*#__PURE__*/React__default.createElement(_StyledCircle, {
+  }, /*#__PURE__*/React__default['default'].createElement(_StyledCircle, {
     cx: "50%",
     cy: "50%",
     r: size / 2,
@@ -136,7 +125,7 @@ var LoadingRing = React__default.memo(function LoadingRing(_ref) {
     strokeWidth: borderWidth,
     strokeDasharray: "".concat(dashLength, " ").concat(gapLength),
     _css3: paused ? 'none' : spin
-  })), /*#__PURE__*/React__default.createElement("circle", {
+  })), /*#__PURE__*/React__default['default'].createElement("circle", {
     cx: "50%",
     cy: "50%",
     r: size / 2 + borderWidth / 2,
@@ -145,8 +134,8 @@ var LoadingRing = React__default.memo(function LoadingRing(_ref) {
   })));
 });
 LoadingRing.propTypes = {
-  mode: index.PropTypes.oneOf(['two-parts', 'half-circle']),
-  paused: index.PropTypes.bool
+  mode: index$1.propTypes.oneOf(['two-parts', 'half-circle']),
+  paused: index$1.propTypes.bool
 };
 LoadingRing.defaultProps = {
   paused: false

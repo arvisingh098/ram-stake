@@ -2,34 +2,20 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
-require('./slicedToArray-0711941d.js');
-require('./unsupportedIterableToArray-68db1d3b.js');
+require('./slicedToArray-a8a77f0e.js');
+require('./unsupportedIterableToArray-f175acfa.js');
 var React = require('react');
-var React__default = _interopDefault(React);
-var _commonjsHelpers = require('./_commonjsHelpers-72d386ba.js');
-var index = require('./index-b0606964.js');
-var defineProperty = require('./defineProperty-0921a47c.js');
-var toConsumableArray = require('./toConsumableArray-d8a4a2c3.js');
+var _commonjsHelpers = require('./_commonjsHelpers-1b94f6bc.js');
+var index = require('./index-46d0e707.js');
+var defineProperty = require('./defineProperty-3cad0327.js');
+var toConsumableArray = require('./toConsumableArray-cc0d28a9.js');
 var _styled = require('styled-components');
-var _styled__default = _interopDefault(_styled);
-var getPrototypeOf = require('./getPrototypeOf-2a661a20.js');
+var getPrototypeOf = require('./getPrototypeOf-55c9e80c.js');
 require('./color.js');
 var components = require('./components.js');
-require('./contains-component.js');
-require('./css.js');
-require('./dayjs.min-e07657bf.js');
-require('./date.js');
 require('./miscellaneous.js');
 require('./environment.js');
 require('./font.js');
-require('./math-f4029164.js');
-require('./characters.js');
-require('./format.js');
-require('./keycodes.js');
-require('./url.js');
-require('./web3.js');
 var constants = require('./constants.js');
 require('./breakpoints.js');
 var springs = require('./springs.js');
@@ -37,15 +23,20 @@ var textStyles = require('./text-styles.js');
 require('./theme-dark.js');
 require('./theme-light.js');
 var Theme = require('./Theme.js');
-var _extends = require('./extends-40571110.js');
-var objectWithoutProperties = require('./objectWithoutProperties-35db8ab0.js');
-require('./isObject-ec755c87.js');
-var Viewport = require('./Viewport-15101437.js');
+var _extends = require('./extends-023d783e.js');
+var objectWithoutProperties = require('./objectWithoutProperties-c6d3675c.js');
+require('./_baseGetTag-42b4dd3e.js');
+var Viewport = require('./Viewport-819c53c9.js');
 require('./objectWithoutPropertiesLoose-1af20ad0.js');
 require('react-dom');
-var web = require('./web-d0294535.js');
-require('./index-0db71dc1.js');
+var web = require('./web-7cbdbd84.js');
+require('./Root-8693e46b.js');
 var RootPortal = require('./RootPortal.js');
+
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
+var _styled__default = /*#__PURE__*/_interopDefaultLegacy(_styled);
 
 var runtime_1 = _commonjsHelpers.createCommonjsModule(function (module) {
 /**
@@ -64,6 +55,24 @@ var runtime = (function (exports) {
   var iteratorSymbol = $Symbol.iterator || "@@iterator";
   var asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator";
   var toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag";
+
+  function define(obj, key, value) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+    return obj[key];
+  }
+  try {
+    // IE 8 has a broken Object.defineProperty that only works on DOM objects.
+    define({}, "");
+  } catch (err) {
+    define = function(obj, key, value) {
+      return obj[key] = value;
+    };
+  }
 
   function wrap(innerFn, outerFn, self, tryLocsList) {
     // If outerFn provided and outerFn.prototype is a Generator, then outerFn.prototype instanceof Generator.
@@ -135,16 +144,19 @@ var runtime = (function (exports) {
     Generator.prototype = Object.create(IteratorPrototype);
   GeneratorFunction.prototype = Gp.constructor = GeneratorFunctionPrototype;
   GeneratorFunctionPrototype.constructor = GeneratorFunction;
-  GeneratorFunctionPrototype[toStringTagSymbol] =
-    GeneratorFunction.displayName = "GeneratorFunction";
+  GeneratorFunction.displayName = define(
+    GeneratorFunctionPrototype,
+    toStringTagSymbol,
+    "GeneratorFunction"
+  );
 
   // Helper for defining the .next, .throw, and .return methods of the
   // Iterator interface in terms of a single ._invoke method.
   function defineIteratorMethods(prototype) {
     ["next", "throw", "return"].forEach(function(method) {
-      prototype[method] = function(arg) {
+      define(prototype, method, function(arg) {
         return this._invoke(method, arg);
-      };
+      });
     });
   }
 
@@ -163,9 +175,7 @@ var runtime = (function (exports) {
       Object.setPrototypeOf(genFun, GeneratorFunctionPrototype);
     } else {
       genFun.__proto__ = GeneratorFunctionPrototype;
-      if (!(toStringTagSymbol in genFun)) {
-        genFun[toStringTagSymbol] = "GeneratorFunction";
-      }
+      define(genFun, toStringTagSymbol, "GeneratorFunction");
     }
     genFun.prototype = Object.create(Gp);
     return genFun;
@@ -435,7 +445,7 @@ var runtime = (function (exports) {
   // unified ._invoke helper method.
   defineIteratorMethods(Gp);
 
-  Gp[toStringTagSymbol] = "Generator";
+  define(Gp, toStringTagSymbol, "Generator");
 
   // A Generator should always return itself as the iterator object when the
   // @@iterator function is called on it. Some browsers' implementations of the
@@ -818,7 +828,7 @@ function _asyncToGenerator(fn) {
 
 var asyncToGenerator = _asyncToGenerator;
 
-function _createSuper(Derived) { return function () { var Super = getPrototypeOf._getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = getPrototypeOf._getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return getPrototypeOf._possibleConstructorReturn(this, result); }; }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = getPrototypeOf.getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = getPrototypeOf.getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return getPrototypeOf.possibleConstructorReturn(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 var id = 0;
@@ -827,19 +837,19 @@ var move = function move(pixel) {
   return "translate3d(0,".concat(pixel, "px,0)");
 };
 
-var ToastContext = React__default.createContext(function () {
+var ToastContext = /*#__PURE__*/React__default['default'].createContext(function () {
   throw new Error("For Toast to work it needs to be part of a ToastHub's tree, which has to be declared at an upper level!");
 });
 
 var ToastHubProvider = /*#__PURE__*/function (_React$PureComponent) {
-  getPrototypeOf._inherits(ToastHubProvider, _React$PureComponent);
+  getPrototypeOf.inherits(ToastHubProvider, _React$PureComponent);
 
   var _super = _createSuper(ToastHubProvider);
 
   function ToastHubProvider() {
     var _this;
 
-    getPrototypeOf._classCallCheck(this, ToastHubProvider);
+    getPrototypeOf.classCallCheck(this, ToastHubProvider);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
@@ -847,15 +857,15 @@ var ToastHubProvider = /*#__PURE__*/function (_React$PureComponent) {
 
     _this = _super.call.apply(_super, [this].concat(args));
 
-    defineProperty._defineProperty(getPrototypeOf._assertThisInitialized(_this), "state", {
+    defineProperty.defineProperty(getPrototypeOf.assertThisInitialized(_this), "state", {
       items: [],
       leaving: [],
       preLeaving: []
     });
 
-    defineProperty._defineProperty(getPrototypeOf._assertThisInitialized(_this), "cancelMap", new WeakMap());
+    defineProperty.defineProperty(getPrototypeOf.assertThisInitialized(_this), "cancelMap", new WeakMap());
 
-    defineProperty._defineProperty(getPrototypeOf._assertThisInitialized(_this), "add", function (msg) {
+    defineProperty.defineProperty(getPrototypeOf.assertThisInitialized(_this), "add", function (msg) {
       var threshold = _this.props.threshold;
 
       _this.setState(function (state) {
@@ -867,7 +877,7 @@ var ToastHubProvider = /*#__PURE__*/function (_React$PureComponent) {
         }
 
         return {
-          items: [].concat(toConsumableArray._toConsumableArray(state.items), [{
+          items: [].concat(toConsumableArray.toConsumableArray(state.items), [{
             key: id++,
             msg: msg
           }]),
@@ -876,18 +886,18 @@ var ToastHubProvider = /*#__PURE__*/function (_React$PureComponent) {
       });
     });
 
-    defineProperty._defineProperty(getPrototypeOf._assertThisInitialized(_this), "remove", function (item) {
+    defineProperty.defineProperty(getPrototypeOf.assertThisInitialized(_this), "remove", function (item) {
       _this.setState(function (state) {
         return {
           items: state.items.filter(function (i) {
             return i.key !== item.key;
           }),
-          leaving: state.leaving.includes(item) ? state.leaving : [item].concat(toConsumableArray._toConsumableArray(state.leaving))
+          leaving: state.leaving.includes(item) ? state.leaving : [item].concat(toConsumableArray.toConsumableArray(state.leaving))
         };
       });
     });
 
-    defineProperty._defineProperty(getPrototypeOf._assertThisInitialized(_this), "config", function (item, state) {
+    defineProperty.defineProperty(getPrototypeOf.assertThisInitialized(_this), "config", function (item, state) {
       var config = springs.springs.lazy; // Return custom configs on leave (includes the life-line duration)
 
       return state === 'leave' ? [{
@@ -895,7 +905,7 @@ var ToastHubProvider = /*#__PURE__*/function (_React$PureComponent) {
       }, config, config] : config;
     });
 
-    defineProperty._defineProperty(getPrototypeOf._assertThisInitialized(_this), "cancel", function (item) {
+    defineProperty.defineProperty(getPrototypeOf.assertThisInitialized(_this), "cancel", function (item) {
       var secondPass = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
 
       if (_this.cancelMap.has(item)) {
@@ -907,7 +917,7 @@ var ToastHubProvider = /*#__PURE__*/function (_React$PureComponent) {
       }
     });
 
-    defineProperty._defineProperty(getPrototypeOf._assertThisInitialized(_this), "leave", function (item) {
+    defineProperty.defineProperty(getPrototypeOf.assertThisInitialized(_this), "leave", function (item) {
       return /*#__PURE__*/function () {
         var _ref = asyncToGenerator( /*#__PURE__*/regenerator.mark(function _callee(next, cancel) {
           return regenerator.wrap(function _callee$(_context) {
@@ -930,7 +940,7 @@ var ToastHubProvider = /*#__PURE__*/function (_React$PureComponent) {
                   // displayed even though they are still finishing their leaving transition.
                   _this.setState(function (state) {
                     return {
-                      preLeaving: [].concat(toConsumableArray._toConsumableArray(state.preLeaving), [item])
+                      preLeaving: [].concat(toConsumableArray.toConsumableArray(state.preLeaving), [item])
                     };
                   }); // Then fade out
 
@@ -979,7 +989,7 @@ var ToastHubProvider = /*#__PURE__*/function (_React$PureComponent) {
     return _this;
   }
 
-  getPrototypeOf._createClass(ToastHubProvider, [{
+  getPrototypeOf.createClass(ToastHubProvider, [{
     key: "render",
     value: function render() {
       var _this$props = this.props,
@@ -994,12 +1004,12 @@ var ToastHubProvider = /*#__PURE__*/function (_React$PureComponent) {
           preLeaving = _this$state.preLeaving;
       var renderList = items.length > 0 || leaving.length > 0;
       var itemsVisible = leaving.length === preLeaving.length && leaving.length > 0 ? false : renderList;
-      return /*#__PURE__*/React__default.createElement(React__default.Fragment, null, /*#__PURE__*/React__default.createElement(ToastContext.Provider, {
+      return /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, /*#__PURE__*/React__default['default'].createElement(ToastContext.Provider, {
         value: {
           itemsVisible: itemsVisible,
           add: this.add
         }
-      }, children), renderList && /*#__PURE__*/React__default.createElement(RootPortal.default, null, /*#__PURE__*/React__default.createElement(ToastList, _extends._extends({
+      }, children), renderList && /*#__PURE__*/React__default['default'].createElement(RootPortal.default, null, /*#__PURE__*/React__default['default'].createElement(ToastList, _extends._extends_1({
         config: this.config,
         items: items,
         leave: this.leave,
@@ -1014,20 +1024,20 @@ var ToastHubProvider = /*#__PURE__*/function (_React$PureComponent) {
   }]);
 
   return ToastHubProvider;
-}(React__default.PureComponent); // ToastList is separated from ToastHubProvider so we can skip its rendering
+}(React__default['default'].PureComponent); // ToastList is separated from ToastHubProvider so we can skip its rendering
 
 
-defineProperty._defineProperty(ToastHubProvider, "propTypes", {
-  children: index.PropTypes.node,
-  position: index.PropTypes.PropTypes.oneOf(['left', 'center', 'right']),
-  shift: index.PropTypes.number,
-  showIndicator: index.PropTypes.bool,
-  threshold: index.PropTypes.number,
-  timeout: index.PropTypes.number,
-  top: index.PropTypes.bool
+defineProperty.defineProperty(ToastHubProvider, "propTypes", {
+  children: index.propTypes.node,
+  position: index.propTypes.PropTypes.oneOf(['left', 'center', 'right']),
+  shift: index.propTypes.number,
+  showIndicator: index.propTypes.bool,
+  threshold: index.propTypes.number,
+  timeout: index.propTypes.number,
+  top: index.propTypes.bool
 });
 
-defineProperty._defineProperty(ToastHubProvider, "defaultProps", {
+defineProperty.defineProperty(ToastHubProvider, "defaultProps", {
   position: 'right',
   showIndicator: false,
   threshold: Infinity,
@@ -1035,7 +1045,7 @@ defineProperty._defineProperty(ToastHubProvider, "defaultProps", {
   top: false
 });
 
-var _StyledDiv = _styled__default("div").withConfig({
+var _StyledDiv = _styled__default['default']("div").withConfig({
   displayName: "ToastHub___StyledDiv",
   componentId: "sc-1y0i8xl-0"
 })(["position:fixed;z-index:1000;top:", ";bottom:", ";left:", "px;right:", "px;display:flex;margin:0 auto;flex-direction:", ";pointer-events:none;align-items:", ";"], function (p) {
@@ -1052,14 +1062,14 @@ var _StyledDiv = _styled__default("div").withConfig({
   return p._css6;
 });
 
-var _StyledAnimatedDiv = _styled__default(web.extendedAnimated.div).withConfig({
+var _StyledAnimatedDiv = _styled__default['default'](web.extendedAnimated.div).withConfig({
   displayName: "ToastHub___StyledAnimatedDiv",
   componentId: "sc-1y0i8xl-1"
 })(["box-sizing:border-box;position:relative;width:", ";"], function (p) {
   return p._css7;
 });
 
-var _StyledDiv2 = _styled__default("div").withConfig({
+var _StyledDiv2 = _styled__default['default']("div").withConfig({
   displayName: "ToastHub___StyledDiv2",
   componentId: "sc-1y0i8xl-2"
 })(["display:flex;align-items:center;overflow:hidden;height:", "px;margin-top:", ";margin-bottom:", ";padding:0 ", "px;", ";color:", ";background:", ";border-radius:", "px;"], function (p) {
@@ -1078,14 +1088,14 @@ var _StyledDiv2 = _styled__default("div").withConfig({
   return p._css14;
 }, constants.RADIUS);
 
-var _StyledAnimatedDiv2 = _styled__default(web.extendedAnimated.div).withConfig({
+var _StyledAnimatedDiv2 = _styled__default['default'](web.extendedAnimated.div).withConfig({
   displayName: "ToastHub___StyledAnimatedDiv2",
   componentId: "sc-1y0i8xl-3"
 })(["position:absolute;bottom:", ";left:0;width:auto;height:5px;background-image:linear-gradient( 130deg,#00b4e6,#00f0e0 );"], function (p) {
   return p._css15;
 });
 
-var ToastList = React__default.memo(function ToastList(_ref2) {
+var ToastList = /*#__PURE__*/React__default['default'].memo(function ToastList(_ref2) {
   var config = _ref2.config,
       items = _ref2.items,
       leave = _ref2.leave,
@@ -1094,7 +1104,7 @@ var ToastList = React__default.memo(function ToastList(_ref2) {
       showIndicator = _ref2.showIndicator,
       top = _ref2.top,
       shift = _ref2.shift,
-      props = objectWithoutProperties._objectWithoutProperties(_ref2, ["config", "items", "leave", "position", "remove", "showIndicator", "top", "shift"]);
+      props = objectWithoutProperties.objectWithoutProperties(_ref2, ["config", "items", "leave", "position", "remove", "showIndicator", "top", "shift"]);
 
   var theme = Theme.useTheme();
 
@@ -1102,7 +1112,7 @@ var ToastList = React__default.memo(function ToastList(_ref2) {
       below = _useViewport.below;
 
   var spacing = below('medium') ? 2 * constants.GU : 3 * constants.GU;
-  return /*#__PURE__*/React__default.createElement(_StyledDiv, _extends._extends({}, props, {
+  return /*#__PURE__*/React__default['default'].createElement(_StyledDiv, _extends._extends_1({}, props, {
     _css: top ? "".concat(spacing, "px") : 'unset',
     _css2: top ? 'unset' : "".concat(spacing, "px"),
     _css3: spacing + (shift || 0),
@@ -1114,7 +1124,7 @@ var ToastList = React__default.memo(function ToastList(_ref2) {
       if (position === 'right') return 'flex-end';
       return 'center';
     }()
-  }), /*#__PURE__*/React__default.createElement(web.Transition, {
+  }), /*#__PURE__*/React__default['default'].createElement(web.Transition, {
     native: true,
     items: items,
     keys: function keys(item) {
@@ -1139,12 +1149,12 @@ var ToastList = React__default.memo(function ToastList(_ref2) {
       /* eslint-disable react/prop-types */
       function (_ref3) {
         var life = _ref3.life,
-            props = objectWithoutProperties._objectWithoutProperties(_ref3, ["life"]);
+            props = objectWithoutProperties.objectWithoutProperties(_ref3, ["life"]);
 
-        return /*#__PURE__*/React__default.createElement(_StyledAnimatedDiv, {
+        return /*#__PURE__*/React__default['default'].createElement(_StyledAnimatedDiv, {
           style: props,
           _css7: below('medium') ? '100%' : '42ch'
-        }, /*#__PURE__*/React__default.createElement(_StyledDiv2, {
+        }, /*#__PURE__*/React__default['default'].createElement(_StyledDiv2, {
           _css8: 6 * constants.GU,
           _css9: top ? '0' : "".concat(1.25 * constants.GU, "px"),
           _css10: top ? "".concat(1.25 * constants.GU, "px") : '0',
@@ -1152,12 +1162,12 @@ var ToastList = React__default.memo(function ToastList(_ref2) {
           _css12: textStyles.textStyle('body3'),
           _css13: theme.floatingContent,
           _css14: theme.floating.alpha(0.95)
-        }, showIndicator && /*#__PURE__*/React__default.createElement(_StyledAnimatedDiv2, {
+        }, showIndicator && /*#__PURE__*/React__default['default'].createElement(_StyledAnimatedDiv2, {
           style: {
             right: life
           },
           _css15: top ? "".concat(1.25 * constants.GU, "px") : '0'
-        }), /*#__PURE__*/React__default.createElement("p", null, item.msg)));
+        }), /*#__PURE__*/React__default['default'].createElement("p", null, item.msg)));
       }
     );
   }
@@ -1165,14 +1175,14 @@ var ToastList = React__default.memo(function ToastList(_ref2) {
   ));
 });
 ToastList.propTypes = {
-  config: index.PropTypes.func,
-  items: index.PropTypes.array,
-  leave: index.PropTypes.func,
-  position: index.PropTypes.PropTypes.oneOf(['left', 'center', 'right']),
-  remove: index.PropTypes.func,
-  shift: index.PropTypes.number,
-  showIndicator: index.PropTypes.bool,
-  top: index.PropTypes.bool
+  config: index.propTypes.func,
+  items: index.propTypes.array,
+  leave: index.propTypes.func,
+  position: index.propTypes.PropTypes.oneOf(['left', 'center', 'right']),
+  remove: index.propTypes.func,
+  shift: index.propTypes.number,
+  showIndicator: index.propTypes.bool,
+  top: index.propTypes.bool
 };
 
 var useToast = function useToast() {

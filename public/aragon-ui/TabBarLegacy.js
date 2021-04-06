@@ -2,51 +2,42 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
-require('./slicedToArray-0711941d.js');
-require('./unsupportedIterableToArray-68db1d3b.js');
+require('./slicedToArray-a8a77f0e.js');
+require('./unsupportedIterableToArray-f175acfa.js');
 var React = require('react');
-var React__default = _interopDefault(React);
-require('./_commonjsHelpers-72d386ba.js');
-var index = require('./index-b0606964.js');
-var defineProperty$1 = require('./defineProperty-0921a47c.js');
-var toConsumableArray = require('./toConsumableArray-d8a4a2c3.js');
+require('./_commonjsHelpers-1b94f6bc.js');
+var index = require('./index-46d0e707.js');
+var defineProperty = require('./defineProperty-3cad0327.js');
+var toConsumableArray = require('./toConsumableArray-cc0d28a9.js');
 var _styled = require('styled-components');
-var _styled__default = _interopDefault(_styled);
-var getPrototypeOf = require('./getPrototypeOf-2a661a20.js');
+var getPrototypeOf = require('./getPrototypeOf-55c9e80c.js');
 require('./color.js');
-require('./components.js');
-require('./contains-component.js');
 var css = require('./css.js');
-require('./dayjs.min-e07657bf.js');
-require('./date.js');
 var miscellaneous = require('./miscellaneous.js');
 require('./environment.js');
 var font = require('./font.js');
-require('./math-f4029164.js');
-require('./characters.js');
-require('./format.js');
-require('./keycodes.js');
-require('./url.js');
-require('./web3.js');
 require('./theme-dark.js');
 require('./theme-light.js');
 var Theme = require('./Theme.js');
 
-function _createSuper(Derived) { return function () { var Super = getPrototypeOf._getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = getPrototypeOf._getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return getPrototypeOf._possibleConstructorReturn(this, result); }; }
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
+var _styled__default = /*#__PURE__*/_interopDefaultLegacy(_styled);
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = getPrototypeOf.getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = getPrototypeOf.getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return getPrototypeOf.possibleConstructorReturn(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 var TabBar = /*#__PURE__*/function (_React$Component) {
-  getPrototypeOf._inherits(TabBar, _React$Component);
+  getPrototypeOf.inherits(TabBar, _React$Component);
 
   var _super = _createSuper(TabBar);
 
   function TabBar() {
     var _this;
 
-    getPrototypeOf._classCallCheck(this, TabBar);
+    getPrototypeOf.classCallCheck(this, TabBar);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
@@ -54,17 +45,17 @@ var TabBar = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call.apply(_super, [this].concat(args));
 
-    defineProperty$1._defineProperty(getPrototypeOf._assertThisInitialized(_this), "state", {
+    defineProperty.defineProperty(getPrototypeOf.assertThisInitialized(_this), "state", {
       displayFocusRing: false
     });
 
-    defineProperty$1._defineProperty(getPrototypeOf._assertThisInitialized(_this), "_barRef", React__default.createRef());
+    defineProperty.defineProperty(getPrototypeOf.assertThisInitialized(_this), "_barRef", /*#__PURE__*/React__default['default'].createRef());
 
-    defineProperty$1._defineProperty(getPrototypeOf._assertThisInitialized(_this), "handleMouseDown", function () {
+    defineProperty.defineProperty(getPrototypeOf.assertThisInitialized(_this), "handleMouseDown", function () {
       _this.disableFocusRing();
     });
 
-    defineProperty$1._defineProperty(getPrototypeOf._assertThisInitialized(_this), "handleKeydown", function (_ref) {
+    defineProperty.defineProperty(getPrototypeOf.assertThisInitialized(_this), "handleKeydown", function (_ref) {
       var key = _ref.key;
 
       if (key === 'Enter') {
@@ -78,7 +69,7 @@ var TabBar = /*#__PURE__*/function (_React$Component) {
       }
     });
 
-    defineProperty$1._defineProperty(getPrototypeOf._assertThisInitialized(_this), "handleTabMouseDown", function (_ref2) {
+    defineProperty.defineProperty(getPrototypeOf.assertThisInitialized(_this), "handleTabMouseDown", function (_ref2) {
       var currentTarget = _ref2.currentTarget;
 
       // We would usually avoid using the DOM when possible, and prefer using a
@@ -93,7 +84,7 @@ var TabBar = /*#__PURE__*/function (_React$Component) {
     return _this;
   }
 
-  getPrototypeOf._createClass(TabBar, [{
+  getPrototypeOf.createClass(TabBar, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       document.addEventListener('keydown', this.handleKeydown);
@@ -126,7 +117,7 @@ var TabBar = /*#__PURE__*/function (_React$Component) {
         return;
       }
 
-      var index = toConsumableArray._toConsumableArray(this._barRef.current.childNodes).indexOf(element);
+      var index = toConsumableArray.toConsumableArray(this._barRef.current.childNodes).indexOf(element);
 
       if (index === -1) {
         return;
@@ -144,43 +135,43 @@ var TabBar = /*#__PURE__*/function (_React$Component) {
           items = _this$props.items,
           selected = _this$props.selected,
           inAppBar = _this$props.inAppBar;
-      return /*#__PURE__*/React__default.createElement("nav", {
+      return /*#__PURE__*/React__default['default'].createElement("nav", {
         onMouseDown: this.handleMouseDown
-      }, /*#__PURE__*/React__default.createElement(Bar, {
+      }, /*#__PURE__*/React__default['default'].createElement(Bar, {
         ref: this._barRef,
         border: !inAppBar
       }, items.map(function (item, i) {
-        return /*#__PURE__*/React__default.createElement(Tab, {
+        return /*#__PURE__*/React__default['default'].createElement(Tab, {
           key: i,
           tabIndex: "0",
           selected: i === selected,
           focusRing: displayFocusRing,
           onMouseDown: _this2.handleTabMouseDown
-        }, /*#__PURE__*/React__default.createElement(Label, {
+        }, /*#__PURE__*/React__default['default'].createElement(Label, {
           selected: i === selected
-        }, item), displayFocusRing && /*#__PURE__*/React__default.createElement(FocusRing, null));
+        }, item), displayFocusRing && /*#__PURE__*/React__default['default'].createElement(FocusRing, null));
       })));
     }
   }]);
 
   return TabBar;
-}(React__default.Component);
+}(React__default['default'].Component);
 /* eslint-disable react/prop-types */
 
 
-defineProperty$1._defineProperty(TabBar, "propTypes", {
-  items: index.PropTypes.arrayOf(index.PropTypes.node).isRequired,
-  selected: index.PropTypes.number,
-  onChange: index.PropTypes.func,
-  inAppBar: index.PropTypes.bool
+defineProperty.defineProperty(TabBar, "propTypes", {
+  items: index.propTypes.arrayOf(index.propTypes.node).isRequired,
+  selected: index.propTypes.number,
+  onChange: index.propTypes.func,
+  inAppBar: index.propTypes.bool
 });
 
-defineProperty$1._defineProperty(TabBar, "defaultProps", {
+defineProperty.defineProperty(TabBar, "defaultProps", {
   selected: 0,
   onChange: miscellaneous.noop
 });
 
-var _StyledUl = _styled__default("ul").withConfig({
+var _StyledUl = _styled__default['default']("ul").withConfig({
   displayName: "TabBarLegacy___StyledUl",
   componentId: "sc-1hufqys-0"
 })(["display:flex;border-bottom:", ";"], function (p) {
@@ -191,12 +182,12 @@ function Bar(_ref3) {
   var children = _ref3.children,
       border = _ref3.border;
   var theme = Theme.useTheme();
-  return /*#__PURE__*/React__default.createElement(_StyledUl, {
+  return /*#__PURE__*/React__default['default'].createElement(_StyledUl, {
     _css: border ? "1px solid ".concat(theme.border) : '0'
   }, children);
 }
 
-var _StyledSpan = _styled__default("span").withConfig({
+var _StyledSpan = _styled__default['default']("span").withConfig({
   displayName: "TabBarLegacy___StyledSpan",
   componentId: "sc-1hufqys-1"
 })(["display:none;position:absolute;top:-5px;left:-5px;right:-5px;bottom:-5px;border:2px solid ", ";border-radius:2px;"], function (p) {
@@ -206,13 +197,13 @@ var _StyledSpan = _styled__default("span").withConfig({
 function FocusRing(_ref4) {
   var children = _ref4.children;
   var theme = Theme.useTheme();
-  return /*#__PURE__*/React__default.createElement(_StyledSpan, {
+  return /*#__PURE__*/React__default['default'].createElement(_StyledSpan, {
     className: "TabBarLegacy-FocusRing",
     _css2: theme.accent
   }, children);
 }
 
-var _StyledLi = _styled__default("li").withConfig({
+var _StyledLi = _styled__default['default']("li").withConfig({
   displayName: "TabBarLegacy___StyledLi",
   componentId: "sc-1hufqys-2"
 })(["position:relative;list-style:none;padding:0 30px;cursor:pointer;", ";", ";&:focus{outline:0;.TabBarLegacy-FocusRing{display:block;}}"], function (p) {
@@ -224,7 +215,7 @@ var _StyledLi = _styled__default("li").withConfig({
 function Tab(_ref5) {
   var children = _ref5.children,
       selected = _ref5.selected;
-  return /*#__PURE__*/React__default.createElement(_StyledLi, {
+  return /*#__PURE__*/React__default['default'].createElement(_StyledLi, {
     _css3: font.font({
       weight: selected ? 'bold' : 'normal',
       deprecationNotice: false
@@ -233,7 +224,7 @@ function Tab(_ref5) {
   }, children);
 }
 
-var _StyledSpan2 = _styled__default("span").withConfig({
+var _StyledSpan2 = _styled__default['default']("span").withConfig({
   displayName: "TabBarLegacy___StyledSpan2",
   componentId: "sc-1hufqys-3"
 })(["display:flex;margin-bottom:-1px;padding:5px 0 3px;border-bottom:4px solid ", ";"], function (p) {
@@ -244,7 +235,7 @@ function Label(_ref6) {
   var children = _ref6.children,
       selected = _ref6.selected;
   var theme = Theme.useTheme();
-  return /*#__PURE__*/React__default.createElement(_StyledSpan2, {
+  return /*#__PURE__*/React__default['default'].createElement(_StyledSpan2, {
     _css5: selected ? theme.accent : 'transparent'
   }, children);
 }

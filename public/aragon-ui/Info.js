@@ -2,43 +2,31 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
-require('./slicedToArray-0711941d.js');
-require('./unsupportedIterableToArray-68db1d3b.js');
+require('./slicedToArray-a8a77f0e.js');
+require('./unsupportedIterableToArray-f175acfa.js');
 var React = require('react');
-var React__default = _interopDefault(React);
-require('./_commonjsHelpers-72d386ba.js');
-var index = require('./index-b0606964.js');
-require('./defineProperty-0921a47c.js');
-require('./toConsumableArray-d8a4a2c3.js');
+require('./_commonjsHelpers-1b94f6bc.js');
+var index = require('./index-46d0e707.js');
+require('./defineProperty-3cad0327.js');
+require('./toConsumableArray-cc0d28a9.js');
 var _styled = require('styled-components');
-var _styled__default = _interopDefault(_styled);
-require('./getPrototypeOf-2a661a20.js');
+require('./getPrototypeOf-55c9e80c.js');
 require('./color.js');
-require('./components.js');
-require('./contains-component.js');
-require('./css.js');
-require('./dayjs.min-e07657bf.js');
-require('./date.js');
 require('./miscellaneous.js');
 require('./environment.js');
 require('./font.js');
-require('./math-f4029164.js');
-require('./characters.js');
-require('./format.js');
-require('./keycodes.js');
-require('./url.js');
-require('./web3.js');
 var constants = require('./constants.js');
-require('./breakpoints.js');
-require('./springs.js');
 var textStyles = require('./text-styles.js');
 require('./theme-dark.js');
 require('./theme-light.js');
 var Theme = require('./Theme.js');
-var _extends$1 = require('./extends-40571110.js');
-var objectWithoutProperties = require('./objectWithoutProperties-35db8ab0.js');
+var _extends = require('./extends-023d783e.js');
+var objectWithoutProperties = require('./objectWithoutProperties-c6d3675c.js');
+
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
+var _styled__default = /*#__PURE__*/_interopDefaultLegacy(_styled);
 
 function getModeStyles(theme, mode) {
   if (mode === 'warning') {
@@ -76,7 +64,7 @@ function getModeStyles(theme, mode) {
   };
 }
 
-var _StyledSection = _styled__default("section").withConfig({
+var _StyledSection = _styled__default['default']("section").withConfig({
   displayName: "Info___StyledSection",
   componentId: "sc-1kgnlbm-0"
 })(["color:", ";background:", ";border-left:2px solid ", ";padding:", "px;border-radius:", "px;word-wrap:break-word;", ";"], function (p) {
@@ -91,7 +79,7 @@ var _StyledSection = _styled__default("section").withConfig({
   return p._css5;
 });
 
-var _StyledH = _styled__default("h1").withConfig({
+var _StyledH = _styled__default['default']("h1").withConfig({
   displayName: "Info___StyledH",
   componentId: "sc-1kgnlbm-1"
 })(["display:flex;align-items:center;color:", ";", ";margin-bottom:", "px;"], function (p) {
@@ -110,7 +98,7 @@ function Info(_ref) {
       background = _ref.background,
       borderColor = _ref.borderColor,
       title = _ref.title,
-      props = objectWithoutProperties._objectWithoutProperties(_ref, ["children", "mode", "color", "titleColor", "background", "borderColor", "title"]);
+      props = objectWithoutProperties.objectWithoutProperties(_ref, ["children", "mode", "color", "titleColor", "background", "borderColor", "title"]);
 
   var theme = Theme.useTheme(); // Get styles from the current mode
 
@@ -118,13 +106,13 @@ function Info(_ref) {
     var styles = getModeStyles(theme, mode);
     return styles;
   }, [mode, theme]);
-  return /*#__PURE__*/React__default.createElement(_StyledSection, _extends$1._extends({}, props, {
+  return /*#__PURE__*/React__default['default'].createElement(_StyledSection, _extends._extends_1({}, props, {
     _css: color || modeStyles.color,
     _css2: background || modeStyles.background,
     _css3: borderColor || modeStyles.borderColor,
     _css4: 2 * constants.GU,
     _css5: textStyles.textStyle('body3')
-  }), title && /*#__PURE__*/React__default.createElement(_StyledH, {
+  }), title && /*#__PURE__*/React__default['default'].createElement(_StyledH, {
     _css6: titleColor || modeStyles.titleColor,
     _css7: textStyles.textStyle('label2'),
     _css8: 1 * constants.GU
@@ -132,17 +120,17 @@ function Info(_ref) {
 }
 
 Info.propTypes = {
-  children: index.PropTypes.node,
-  title: index.PropTypes.node,
-  mode: index.PropTypes.oneOf(['info', 'description', 'warning', 'error']),
-  color: index.PropTypes.string,
-  titleColor: index.PropTypes.string,
-  background: index.PropTypes.string,
-  borderColor: index.PropTypes.string
+  children: index.propTypes.node,
+  title: index.propTypes.node,
+  mode: index.propTypes.oneOf(['info', 'description', 'warning', 'error']),
+  color: index.propTypes.string,
+  titleColor: index.propTypes.string,
+  background: index.propTypes.string,
+  borderColor: index.propTypes.string
 }; // Backward compatibility
 
 function Warning(props) {
-  return /*#__PURE__*/React__default.createElement(Info, _extends$1._extends({
+  return /*#__PURE__*/React__default['default'].createElement(Info, _extends._extends_1({
     mode: "warning"
   }, props));
 }

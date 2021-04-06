@@ -2,31 +2,33 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
-require('./slicedToArray-0711941d.js');
-require('./unsupportedIterableToArray-68db1d3b.js');
+require('./slicedToArray-a8a77f0e.js');
+require('./unsupportedIterableToArray-f175acfa.js');
 var React = require('react');
-var React__default = _interopDefault(React);
-require('./_commonjsHelpers-72d386ba.js');
-var index = require('./index-b0606964.js');
-require('./extends-40571110.js');
-require('./objectWithoutProperties-35db8ab0.js');
-var ReactDOM = _interopDefault(require('react-dom'));
-var index$1 = require('./index-0db71dc1.js');
+require('./_commonjsHelpers-1b94f6bc.js');
+var index = require('./index-46d0e707.js');
+require('./extends-023d783e.js');
+require('./objectWithoutProperties-c6d3675c.js');
+var ReactDOM = require('react-dom');
+var Root = require('./Root-8693e46b.js');
+
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
+var ReactDOM__default = /*#__PURE__*/_interopDefaultLegacy(ReactDOM);
 
 var RootPortal = function RootPortal(props) {
-  return /*#__PURE__*/React__default.createElement(index$1.Root, null, function (rootElement) {
+  return /*#__PURE__*/React__default['default'].createElement(Root.Root, null, function (rootElement) {
     if (!rootElement) {
       throw new Error('<RootPortal> needs to be nested in <Root.Provider>. Have you declared <Main>?');
     }
 
-    return ReactDOM.createPortal(props.children, rootElement);
+    return /*#__PURE__*/ReactDOM__default['default'].createPortal(props.children, rootElement);
   });
 };
 
 RootPortal.propTypes = {
-  children: index.PropTypes.node.isRequired
+  children: index.propTypes.node.isRequired
 };
 
 exports.default = RootPortal;

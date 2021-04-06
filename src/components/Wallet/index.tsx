@@ -48,7 +48,7 @@ function Wallet({ user }: {user: string}) {
         getTokenAllowance(UNI.addr, user, TokenGeyser.addr),
       ]);
 
-      const userLpToken = toTokenUnitsBN(lpTokens, RAM.decimals);
+      const userLpToken = toTokenUnitsBN(lpTokens, UNI.decimals);
       const userStakedLpToken = toTokenUnitsBN(stakedAmount, RAM.decimals);
       const userRamToken = toTokenUnitsBN(ramToken, RAM.decimals);
       const userEarnedToken = toTokenUnitsBN(earnedAmount, RAM.decimals);
