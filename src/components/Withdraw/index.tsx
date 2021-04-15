@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import BigNumber from 'bignumber.js';
 import {
-  getBalance, totalStakedFor, unstakeQuery, getTokenAllowance,
+  getBalance, totalStakedFor, unstakeQuery, getTokenAllowance, apy
 } from '../../utils/infura';
 import {UNI, TokenGeyser, RAM} from "../../constants/tokens";
 import { toTokenUnitsBN } from '../../utils/number';
@@ -22,8 +22,33 @@ function Pool({ user }: {user: string}) {
   const [userStakedLpToken, setUserStakedLpToken] = useState(new BigNumber(0));
   const [userRamToken, setRamToken] = useState(new BigNumber(0));
   const [userEarnedToken, setEarnedToken] = useState(new BigNumber(0));
-
   const [userESDAllowance, setUserESDAllowance] = useState(new BigNumber(0));
+  const [apyPer, setApy] = useState(new BigNumber(0));
+
+  useEffect(() => {
+    let isCancelled = false;
+
+    async function updateAPY() {
+      const [
+        apyPercent,
+      ] = await Promise.all([
+        apy(),
+      ]);
+
+      if (!isCancelled) {
+        setApy(new BigNumber(apyPercent));
+      }
+    }
+
+    updateAPY();
+    const id = setInterval(updateAPY, 1000);
+
+    // eslint-disable-next-line consistent-return
+    return () => {
+      isCancelled = true;
+      clearInterval(id);
+    };
+  }, [user]);
 
   //Update User balances
   useEffect(() => {
@@ -39,7 +64,7 @@ function Pool({ user }: {user: string}) {
 
     async function updateUserInfo() {
       const [
-        lpTokens, stakedAmount, ramToken, earnedAmount, esdAllowance
+        lpTokens, stakedAmount, ramToken, earnedAmount, esdAllowance,
       ] = await Promise.all([
         getBalance(UNI.addr, user),
         totalStakedFor(TokenGeyser.addr, user),
@@ -75,6 +100,7 @@ function Pool({ user }: {user: string}) {
       <IconHeader icon={<i className="fas fa-parachute-box"/>} text="LP Reward Pool"/>
 
       <PoolPageHeader
+        apyPer={apyPer}
         userLpToken={userLpToken}
         userRamToken={userRamToken}
         userEarnedToken={userEarnedToken}

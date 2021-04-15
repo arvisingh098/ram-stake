@@ -5,17 +5,18 @@ import { BalanceBlock } from '../common/index';
 import TextBlock from "../common/TextBlock";
 
 type AccountPageHeaderProps = {
+  apyPer: BigNumber,
   userLpToken: BigNumber,
   userRamToken: BigNumber,
   userEarnedToken: BigNumber,
 };
 
 const AccountPageHeader = ({
-  userLpToken, userRamToken, userEarnedToken
+  apyPer, userLpToken, userRamToken, userEarnedToken
 }: AccountPageHeaderProps) => (
   <div style={{ padding: '2%', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
     <div style={{ flexBasis: '25%' }}>
-      <TextBlock label="APY" text="Comming Soon"/>
+      <BalanceBlock asset="APY" balance={apyPer} suffix={"%"}/>
     </div>
     <div style={{ flexBasis: '25%' }}>
       <BalanceBlock asset="Wallet Balance" balance={userLpToken} suffix={" RAM-WETH"}/>
