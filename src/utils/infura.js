@@ -117,3 +117,57 @@ export const getRAMPrice = async () => {
       return 0;
     });
 };
+
+export const totalRewards = async () => {
+  const poolContract = new window.web3.eth.Contract(geyserAbi, TokenGeyser.addr);
+  const totalLocked = await poolContract.methods.totalLocked().call();
+  const totalUnlocked = await poolContract.methods.totalUnlocked().call();
+  return (parseInt(totalLocked)+parseInt(totalUnlocked)) / Math.pow(10, 9)
+};
+
+export const totalDeposit = async () => {
+  const wethPrice = await getWTHPrice();
+  const poolContract = new window.web3.eth.Contract(geyserAbi, TokenGeyser.addr);
+  const totalStaked = await poolContract.methods.totalStaked().call();
+
+  const uniContract = new window.web3.eth.Contract(pairAbi, UNI.addr);
+  const reserve = await uniContract.methods.getReserves().call();
+  const lpSupply = await uniContract.methods.totalSupply().call();
+
+  const lpPrice = (2 * (reserve._reserve1 / Math.pow(10, 18)) * wethPrice) / (lpSupply/Math.pow(10, 18));
+  const totalDeposit = totalStaked * (lpPrice / Math.pow(10, 18));
+  return totalDeposit
+};
+
+export const lockedRewards = async () => {
+  const poolContract = new window.web3.eth.Contract(geyserAbi, TokenGeyser.addr);
+  const totalLocked = await poolContract.methods.totalLocked().call();
+  return (totalLocked / Math.pow(10, 9))
+};
+
+export const unlockedRewards = async () => {
+  const poolContract = new window.web3.eth.Contract(geyserAbi, TokenGeyser.addr);
+  const totalUnlocked = await poolContract.methods.totalUnlocked().call();
+  return totalUnlocked / Math.pow(10, 9)
+};
+
+export const programDuration = async () => {
+  const poolContract = new window.web3.eth.Contract(geyserAbi, TokenGeyser.addr);
+  const programDurations = await poolContract.methods.unlockSchedules(0).call();
+
+  const lastUnlockTimestampSec = programDurations.lastUnlockTimestampSec;
+  const durationSec = programDurations.durationSec;
+  const duration = parseInt(durationSec / 86400)
+  return duration
+};
+
+export const rewardUnlockDuration = async () => {
+  const poolContract = new window.web3.eth.Contract(geyserAbi, TokenGeyser.addr);
+  const programDurations = await poolContract.methods.unlockSchedules(0).call();
+  const totalLocked = await poolContract.methods.totalLocked().call();
+  
+  const durationSec = programDurations.durationSec;
+  const duration = parseInt(durationSec / 86400)
+    
+  return parseInt(totalLocked / Math.pow(10, 9))/duration
+};
